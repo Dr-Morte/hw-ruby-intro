@@ -50,6 +50,19 @@ end
 
 
 def sum_to_n? arr, n
+  
+  if arr.length <2
+    return false
+  else
+    for i in arr
+      for j in arr
+        if ((arr.index(i) != arr.index(j)) && (i+j == n))
+          return true
+        end
+      end
+    end
+    return false
+  end
   # YOUR CODE HERE
 end
 
