@@ -74,6 +74,7 @@ def hello(name)
 end
 
 def starts_with_consonant? s
+  s =~ /\A[bcdefghjklmnpqrstvxwyz]/i ? true : false
   # YOUR CODE HERE
 end
 
