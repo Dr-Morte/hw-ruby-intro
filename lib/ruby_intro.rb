@@ -12,8 +12,42 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  big_one = -10
+  big_two = -10
+  sum = 0
+  if is_empty? arr
+    return 0
+    
+    # I dont know if this counts as hardcoding or not? I think 1 elem is a base case?
+  elsif arr.length == 1
+    return arr[0]
+  else
+    for a in arr
+      if a > big_one
+        big_one = a
+        index = arr.index(a)
+      end
+    end
+    
+    arr.delete_at(index)
+    
+    for a in arr
+      if a > big_two
+        big_two = a
+      end
+    end
+    sum = big_one + big_two
+    return sum
+  end
 end
+
+def is_empty? arr
+  if arr.length == 0
+    return true
+  else return false
+  end
+end
+
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
