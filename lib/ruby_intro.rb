@@ -79,7 +79,16 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # return false if s contains anything other than 1 or 0, or is an empty string
+  if s =~ /[^10]/ || s == ""
+      return false
+      # return false if the binary ends with something other than 00
+    elsif s =~ /01$|10$|11$/
+      return false
+      # we must be at a binary number that ends with 00
+    else
+      return true
+  end
 end
 
 # Part 3
