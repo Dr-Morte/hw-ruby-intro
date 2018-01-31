@@ -98,7 +98,10 @@ class BookInStock
   #Constructor to initialize the class. Also initialize ISBN & Price
   def initialize (isbn, price)
     
-    #Need to implement begin/rescue code 
+    #Raises error about invalid ISBN if the string is empty
+    raise ArgumentError, "Enter a valid ISBN.\n" unless isbn.to_s.empty? == false
+    #Raises error about price if it is 0 or negative in value
+    raise ArgumentError, "Ender a Price above $0.00.\n" unless price.to_i > 0
     @isbn = isbn
     @price = price
   end
@@ -111,5 +114,3 @@ class BookInStock
     string = "$%0.2f" % [price]
   end
 end
-
-book3 = BookInStock.new(50, 33.42)
