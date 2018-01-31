@@ -94,5 +94,17 @@ end
 # Part 3
 
 class BookInStock
+  
+  #Constructor to initialize the class. Also initialize ISBN & Price
+  def initialize (isbn, price)
+    puts "creating a new book"
+    @isbn = isbn
+    @price = price
+  end
+  
+  #make the setters and getters
+  attr_accessor :isbn, :price
 # YOUR CODE HERE
 end
+
+book3 = BookInStock.new(50, 33.42)
